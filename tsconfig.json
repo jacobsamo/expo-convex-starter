@@ -4,9 +4,9 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@convex/*": ["./convex/*"],
-      "@assets/*": ["./assets/*"]
+      "@/*": ["src/*"],
+      "@convex/*": ["convex/*"],
+      "@assets/*": ["assets/*"]
     }
   },
   "include": [

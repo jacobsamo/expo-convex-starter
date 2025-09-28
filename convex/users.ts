@@ -35,9 +35,9 @@ export const currentUser = query((ctx: QueryCtx) => getCurrentUser(ctx));
 
 /** Get user by Clerk use id (AKA "subject" on auth)  */
 export const getUser = query({
-  args: { subject: v.string() },
+  args: { clerkUserId: v.string() },
   async handler(ctx, args) {
-    return await userQuery(ctx, args.subject);
+    return await userQuery(ctx, args.clerkUserId);
   },
 });
 
@@ -76,10 +76,6 @@ export const createUser = internalMutation({
 
     const user = extractUserFields(data);
     const userId = await ctx.db.insert("users", user);
-    await pushNotifications.recordToken(ctx, {
-      userId,
-      pushToken: args.token,
-    });
   },
 });
 
