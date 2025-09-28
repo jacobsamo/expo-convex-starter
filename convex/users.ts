@@ -2,6 +2,7 @@ import { UserJSON } from "@clerk/backend";
 import { v } from "convex/values";
 import { Doc, Id } from "./_generated/dataModel";
 import { internalMutation, query, QueryCtx } from "./_generated/server";
+import {pushNotifications} from "./helpers"
 
 type UserLoginStatus =
   | { message: "No JWT Token"; user: null }
@@ -75,6 +76,10 @@ export const createUser = internalMutation({
 
     const user = extractUserFields(data);
     const userId = await ctx.db.insert("users", user);
+    await pushNotifications.recordToken(ctx, {
+      userId,
+      pushToken: args.token,
+    });
   },
 });
 

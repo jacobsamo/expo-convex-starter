@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun run lint)",
+      "Read(~/.zshrc)",
+       "Read(./.env.example)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "env": {}
+}

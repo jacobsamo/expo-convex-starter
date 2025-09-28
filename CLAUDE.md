@@ -1,5 +1,5 @@
 # Project description
-This project uses convex + clerk + expo
+See @README for project overview and @package.json for available bun commands for this project.
 
 # Bash commands
 - bun run build: Build the project
@@ -15,6 +15,6 @@ This project uses convex + clerk + expo
 - no files over 500 lines
 - maintain a clear directory structure and make sure to avoid file duplicates
 
-# Workflow
-- Be sure to typecheck when you’re done making a series of code changes
-- Prefer running single tests, and not the whole test suite, for performance
+
+# Convex
+We are using convex as our backend, please follow the convex documentation https://docs.convex.dev/ to understand how it works. see @convex/* for more details.
